@@ -2,6 +2,7 @@ import numpy as np
 import math
 from path_planner import find_path
 from diff_drive import differential_drive_astar
+from visualisation import plot_grid_path
 
 grid = np.zeros((100, 100), dtype=int)
 np.random.seed(0)
@@ -26,3 +27,6 @@ if path2:
         print(f"x={x:.2f}, y={y:.2f}, θ={math.degrees(theta):.1f}°")
 else:
     print("No path found.")
+
+plot_grid_path(grid, path1, "Milestone 1: Grid-based A*", is_diff_drive=False)
+plot_grid_path(grid, path2, "Milestone 2: Differential Drive A*", is_diff_drive=True)
