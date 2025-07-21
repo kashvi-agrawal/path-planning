@@ -1,7 +1,8 @@
+import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_grid_path(grid, path, title, is_diff_drive=False):
-    plt.figure(figsize=(8, 8))
+def plot_grid_path(grid, path=None, title="Occupancy Grid", is_diff_drive=False):
+    plt.figure(figsize=(10, 10))
     plt.imshow(grid, cmap='gray_r', origin='lower')
 
     if path:
@@ -16,6 +17,12 @@ def plot_grid_path(grid, path, title, is_diff_drive=False):
         plt.scatter(xs[-1], ys[-1], color='red', label='Goal')
 
     plt.title(title)
+    plt.xlabel("X (grid index)")
+    plt.ylabel("Y (grid index)")
     plt.legend()
     plt.grid(True)
     plt.show()
+
+if __name__ == "__main__":
+    grid = np.load("occupancy_grid.npy")  # From Milestone 3A
+    plot_grid_path(grid, title="Milestone 3A: Occupancy Grid from 3D LiDAR")
