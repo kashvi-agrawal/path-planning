@@ -5,21 +5,37 @@ This repository contains my implementation of robot path planning modules across
 **Overview** 
 
   🔹 Milestone 1: Planning in an Occupancy Grid
+  
       - Implements a standard A* search algorithm to find a feasible path on a binary 2D occupancy grid.
+      
       - Environment: 100×100 grid with randomly placed obstacles.
+      
       - Output: A valid path from start to goal.
+      
   🔹 Milestone 2: Including a Robot Model
+  
       - Extends planning to a differential drive robot, accounting for motion constraints and heading.
+      
       - Introduces wheel velocities and motion primitives.
+      
       - Produces a realistic, smooth path reflecting nonholonomic robot movement.
+      
   🔹 Milestone 3: Real Sensor Data Integration
+  
       - 3A – Occupancy Grid Generation:
+      
           - Processes 379 LiDAR point cloud scans and odometry data.
+          
           - Filters ground points, transforms each scan into a global frame, and builds a 2D occupancy grid.
+          
       - 3B – Relative Trajectory:
+      
           - Computes the robot’s trajectory relative to its starting pose.
+          
       - 3C – Planned vs Actual Path:
+      
           - Runs A* path planning on the real occupancy grid.
+          
           - Compares the computed path to the robot’s actual driven trajectory.
 
 **Project Structure**
