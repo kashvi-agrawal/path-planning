@@ -1,7 +1,9 @@
 **Robot Navigation – Path Planning and Occupancy Grid Mapping**
+
 This repository contains my implementation of robot path planning modules across three milestones. The project builds from basic grid-based planning to realistic differential-drive motion planning and finally generates an occupancy grid from real 3D LiDAR sensor data. The final milestone compares the robot’s actual driven path with what a grid-based planner would have suggested in the same environment.
 
 **Overview** 
+
   🔹 Milestone 1: Planning in an Occupancy Grid
       - Implements a standard A* search algorithm to find a feasible path on a binary 2D occupancy grid.
       - Environment: 100×100 grid with randomly placed obstacles.
@@ -11,14 +13,14 @@ This repository contains my implementation of robot path planning modules across
       - Introduces wheel velocities and motion primitives.
       - Produces a realistic, smooth path reflecting nonholonomic robot movement.
   🔹 Milestone 3: Real Sensor Data Integration
-      3A – Occupancy Grid Generation:
-        - Processes 379 LiDAR point cloud scans and odometry data.
-        - Filters ground points, transforms each scan into a global frame, and builds a 2D occupancy grid.
-      3B – Relative Trajectory:
-        - Computes the robot’s trajectory relative to its starting pose.
-      3C – Planned vs Actual Path:
-        - Runs A* path planning on the real occupancy grid.
-        - Compares the computed path to the robot’s actual driven trajectory.
+      - 3A – Occupancy Grid Generation:
+          - Processes 379 LiDAR point cloud scans and odometry data.
+          - Filters ground points, transforms each scan into a global frame, and builds a 2D occupancy grid.
+      - 3B – Relative Trajectory:
+          - Computes the robot’s trajectory relative to its starting pose.
+      - 3C – Planned vs Actual Path:
+          - Runs A* path planning on the real occupancy grid.
+          - Compares the computed path to the robot’s actual driven trajectory.
 
 **Project Structure**
 .
